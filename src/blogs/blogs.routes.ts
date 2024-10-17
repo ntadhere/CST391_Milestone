@@ -6,7 +6,7 @@ router
     .route('/blogs')
     .get(BlogsController.readBlogs);
 router
-    .route('/blogs/:author')
+    .route('/blogs/authorName/:author')
     .get(BlogsController.readBlogsByAuthor);
 router
     .route('/blogs/search/author/:search')
@@ -14,6 +14,9 @@ router
 router
     .route('/blogs/search/description/:search')
     .get(BlogsController.readBlogsByDescriptionSearch);
+router
+    .route('/blogs/search/title/:search')
+    .get(BlogsController.readBlogsByTitleSearch);
 router
     .route('/blogs/blogId/:blogId')
     .get(BlogsController.readBlogsByBlogId);

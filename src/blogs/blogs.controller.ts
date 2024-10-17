@@ -85,7 +85,7 @@ export const readBlogsByBlogId: RequestHandler = async (req: Request, res: Respo
     }
 };
 
-/** READ ALBUM BY ARTIST SEARCH**********
+/** READ BLOG BY AUTHOR NAME SEARCH**********
  * *********************
  */
 export const readBlogsByAuthorSearch: RequestHandler = async (req: Request, res: Response) => {
@@ -106,13 +106,34 @@ export const readBlogsByAuthorSearch: RequestHandler = async (req: Request, res:
     }
 };
 
-/** READ ALBUM BY DESCRIPTION SEARCH**********
+/** READ BLOG BY DESCRIPTION SEARCH**********
  * *********************
  */
 export const readBlogsByDescriptionSearch: RequestHandler = async (req: Request, res: Response) => {
     try {
         console.log('search', req.params.search);
         const blogs = await BlogDao.readBlogsByDescriptionSearch('%' + req.params.search + '%');
+
+        // await readTracks(albums, res);
+
+        res.status(200).json(
+            blogs
+        );
+    } catch (error) {
+        console.error('[blogs.controller][readBlogs][Error] ', error);
+        res.status(500).json({
+            message: 'There was an error when fetching blogs'
+        });
+    }
+};
+
+/** READ BLOG BY TITLE SEARCH**********
+ * *********************
+ */
+export const readBlogsByTitleSearch: RequestHandler = async (req: Request, res: Response) => {
+    try {
+        console.log('search', req.params.search);
+        const blogs = await BlogDao.readBlogsByTitleSearch('%' + req.params.search + '%');
 
         // await readTracks(albums, res);
 

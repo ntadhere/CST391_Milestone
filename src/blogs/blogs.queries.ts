@@ -40,14 +40,21 @@ export const blogQueries = {
         SELECT
              blogId as blogId, title AS title, authorName AS authorName,
             description AS description, year AS year, image AS image
-        FROM journey.blogs
+        FROM tigercave.blog
         WHERE tigercave.blog.description LIKE ?
+        `,
+  readBlogsByTitleSearch: `
+        SELECT
+             blogId as blogId, title AS title, authorName AS authorName,
+            description AS description, year AS year, image AS image
+        FROM tigercave.blog
+        WHERE tigercave.blog.title LIKE ?
         `,
   readBlogsByBlogId: `
         SELECT
             blogId as blogId, title AS title, authorName AS authorName,
             description AS description, year AS year, image AS image
-        FROM journey.blogs
+        FROM tigercave.blog
         WHERE tigercave.blog.blogId = ?
         `,
   createBlog: `

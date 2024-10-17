@@ -5,4 +5,5 @@ export interface Blog {
     description: string,
     year: string,
     image: string,
+    author_authorId:number, //Foreign key
 }

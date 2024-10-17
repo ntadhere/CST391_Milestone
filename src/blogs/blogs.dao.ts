@@ -20,6 +20,10 @@ export const readBlogsByDescriptionSearch = async (search: string) => {
     console. log('search param', search);
     return execute<Blog[]>(blogQueries.readBlogsByDescriptionSearch, [search]);
 };
+export const readBlogsByTitleSearch = async (search: string) => {
+    console. log('search param', search);
+    return execute<Blog[]>(blogQueries.readBlogsByTitleSearch, [search]);
+};
 
 export const readBlogsByBlogId = async (blogId: number) => {
      return execute<Blog[]>(blogQueries.readBlogsByBlogId, [blogId]);
