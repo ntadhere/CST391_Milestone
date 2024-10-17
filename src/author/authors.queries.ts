@@ -1,7 +1,7 @@
 export const authorQueries = {
     readAuthors: `
-    SELECT
-        DISTINCT author as author
-    FROM journey.blogs
+    SELECT 
+        name AS authorName
+    FROM tigercave.author;
     `
 }

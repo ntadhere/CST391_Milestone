@@ -57,7 +57,7 @@ if (process.env.NODE_ENV == 'development') {
 // Application routes
 // root route
 app.get('/', (req: Request, res: Response) => {
-    res.send('<h1>Welcome to the Music API<h1/>');
+    res.send('<h1>Welcome to the our blog<h1/>');
   });
 // adding router middleware
 app.use('/', [blogsRouter , authorsRouter] );
