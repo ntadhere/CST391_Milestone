@@ -148,7 +148,7 @@ export const readBlogsByTitleSearch: RequestHandler = async (req: Request, res: 
     }
 };
 
-/** CREATE ALBUM**********
+/** CREATE BLOG**********
  * *********************
  */
 export const createBlog: RequestHandler = async (req: Request, res: Response) => {
@@ -194,7 +194,7 @@ export const createBlog: RequestHandler = async (req: Request, res: Response) =>
         });
     }
 };
-/** UPDATE ALBUM**********
+/** UPDATE BLOG**********
  * *********************
  */
 export const updateBlog: RequestHandler = async (req: Request, res: Response) => {
@@ -245,7 +245,7 @@ export const updateBlog: RequestHandler = async (req: Request, res: Response) =>
 //     }
 // }
 
-/** DELETE ALBUM**********
+/** DELETE BLOG**********
  * *********************
  */
 export const deleteBlog: RequestHandler = async (req: Request, res: Response) => {

@@ -3,7 +3,7 @@ export interface Blog {
     title: string,
     authorName: string,
     description: string,
-    year: string,
+    year: number,
     image: string,
-    author_authorId:number, //Foreign key
+    author_authorId: number //Foreign key
 }
