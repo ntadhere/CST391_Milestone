@@ -8,20 +8,20 @@ export const authorQueries = {
     SELECT
         authorId AS authorId, 
         name AS name, 
-        userName AS userName, 
+        username AS username, 
         email AS email 
     FROM tigercave.author
     WHERE tigercave.author.authorId = ?;
     `,
     createAuthor:`
-    INSERT INTO author (name, userName, email, password)
+    INSERT INTO author (name, username, email, password)
                 VALUES (?, ?, ?, ?);
     `,
     updateAuthor:`
     UPDATE tigercave.author
     SET 
         name = ?, 
-        userName = ?, 
+        username = ?, 
         email = ?, 
         password = ?
     WHERE authorId = ?;
