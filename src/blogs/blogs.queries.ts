@@ -58,7 +58,7 @@ export const blogQueries = {
         WHERE tigercave.blog.blogId = ?
         `,
   createBlog: `
-        INSERT INTO BLOG(title, authorName, year, description, image, author_authorId) VALUES(?,?,?,?,?,?)
+        INSERT INTO BLOG(title, authorName, description, year, image, author_authorId) VALUES(?,?,?,?,?,?)
         `,
   updateBlog: `
         UPDATE tigercave.blog

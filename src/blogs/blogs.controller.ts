@@ -182,11 +182,11 @@ export const createBlog: RequestHandler = async (req: Request, res: Response) =>
         //     }
         // }
 
-        // // Step 3: Respond with success after all tracks have been inserted
-        // res.status(200).json({
-        //     message: 'Album and tracks created successfully',
-        //     albumId: okPacket.insertId
-        // });
+         // Step 3: Respond with success after all tracks have been inserted
+         res.status(200).json({
+            message: 'Blog created successfully',
+            blogId: okPacket.insertId
+        });
     } catch (error) {
         console.error('[blogs.controller][createBlog][Error] ', error);
         res.status(500).json({

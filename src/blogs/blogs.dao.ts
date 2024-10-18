@@ -31,7 +31,7 @@ export const readBlogsByBlogId = async (blogId: number) => {
 
 export const createBlog = async (blog: Blog) => { 
     return execute<OkPacket>(blogQueries.createBlog,
-    [blog. title, blog.authorName, blog.description, blog.year, blog.image]);
+    [blog.title, blog.authorName, blog.description, blog.year, blog.image, blog.author_authorId]);
 };
 
 export const updateBlog = async (blog: Blog) => {
