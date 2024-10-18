@@ -141,7 +141,7 @@ export const deleteAuthor: RequestHandler = async (req: Request, res: Response) 
         {
             const response = await AuthorDAO.deleteAuthor(authorId);
             res.status(200).json(
-                response
+                response,
             );
         } else{
             throw new Error("Integer expected for authorId");
