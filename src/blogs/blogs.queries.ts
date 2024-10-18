@@ -62,7 +62,7 @@ export const blogQueries = {
         `,
   updateBlog: `
         UPDATE tigercave.blog
-        SET title = ?, authorName = ?, year = ?, image = ?, description = ?
+        SET title = ?, authorName = ?, description = ?, year = ?, image = ?, author_authorId = ?
         WHERE blogId = ?
         `,
   deleteBlog: `

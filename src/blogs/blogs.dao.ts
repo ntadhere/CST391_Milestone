@@ -36,7 +36,7 @@ export const createBlog = async (blog: Blog) => {
 
 export const updateBlog = async (blog: Blog) => {
     return execute<OkPacket>(blogQueries.updateBlog,
-    [blog.title, blog.authorName, blog.year, blog.image, blog.description, blog.blogId]);
+    [blog.title, blog.authorName, blog.description, blog.year, blog.image, blog.author_authorId, blog.blogId]);
 };
 
 export const deleteBlog = async (blogId: number) => {
