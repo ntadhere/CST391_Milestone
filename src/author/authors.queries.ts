@@ -4,9 +4,9 @@ export const authorQueries = {
         name AS name
     FROM tigercave.author;
     `,
-    readAuthorsId:`
+    readAuthorById:`
     SELECT
-        authorId AS authorId 
+        authorId AS authorId, 
         name AS name, 
         userName AS userName, 
         email AS email 
