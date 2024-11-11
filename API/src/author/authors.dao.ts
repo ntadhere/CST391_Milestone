@@ -12,12 +12,12 @@ export const readAuthorById = async (authorId: number) => {
 
 export const createAuthor = async (author: Author) => { 
    return execute<OkPacket>(authorQueries.createAuthor,
-   [author.name, author.username, author.email, author.password]);
+   [author.name, author.image, author.username, author.email, author.password]);
 };
 
 export const updateAuthor = async (author: Author) => {
    return execute<OkPacket>(authorQueries.updateAuthor,
-   [author.name, author.username, author.email, author.password, author.authorId]);
+   [author.name, author.image, author.username, author.email, author.password, author.authorId]);
 };
 
 export const deleteAuthor = async (authorId: number) => {

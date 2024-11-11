@@ -11,19 +11,29 @@ export const blogQueries = {
             description AS description, year AS year, image AS image
         FROM tigercave.blog
         `,
+  //   readBlogsByAuthor: `
+  //         SELECT
+  //             b.blogId AS blogId,
+  //             b.title AS title,
+  //             a.name AS authorName,
+  //             b.description AS description,
+  //             b.year AS year,
+  //             b.image AS image
+  //         FROM tigercave.blog b
+  //         JOIN tigercave.author a ON b.author_authorId = a.authorId
+  //         WHERE a.name = ?;
+  //         `,
   readBlogsByAuthor: `
-        SELECT 
-            b.blogId AS blogId, 
-            b.title AS title, 
-            a.name AS authorName, 
-            b.description AS description, 
-            b.year AS year, 
-            b.image AS image
-        FROM tigercave.blog b
-        JOIN tigercave.author a ON b.author_authorId = a.authorId
-        WHERE a.name = ?;
-
-        `,
+            SELECT 
+                  blogId AS blogId, 
+                  title AS title, 
+                  authorName AS authorName, 
+                  description AS description, 
+                  year AS year, 
+                  image AS image
+            FROM tigercave.blog 
+            WHERE tigercave.blog.authorName = ?;
+`,
   readBlogsByAuthorSearch: `
         SELECT 
             b.blogId AS blogId, 
