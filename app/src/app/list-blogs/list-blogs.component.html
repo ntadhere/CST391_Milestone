@@ -1,0 +1,43 @@
+<div *ngIf="!deleteSelectedBlog && !readSelectedBlog && !editSelectedBlog">
+  <h1>{{ title }}</h1>
+  <div class="container d-flex justify-content-center">
+    <div class="row row-cols-1 row-cols-md-2 g-4" >
+      <div class="col" *ngFor="let blog of blogs">
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img [src]="blog.image" class="card-img-top" class="img-square" />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{ blog.title }}</h5>
+                <p class="card-text">author:
+                  {{ blog.authorName }}
+                </p>
+                <div class="text-end">
+                  <a class="btn border-dark mb-3" (click)="onReadSelectBlog(blog)"
+                    >Read</a>
+                  <a class="btn border-dark mb-3" (click)="onEditSelectBlog(blog)"
+                    >Edit</a >
+                  <a class="btn border-dark mb-3" (click)="onDeleteSelectBlog(blog)"
+                    >Delete</a >
+                </div>
+                <div class="text-end">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div *ngIf="selectedBlog">
+  <app-your-blogs [blog]="selectedBlog"></app-your-blogs>
+</div> -->
+
+<app-display-blog *ngIf="readSelectedBlog" [blog]="readSelectedBlog"></app-display-blog>
+<app-edit-blog *ngIf="editSelectedBlog" [blog]="editSelectedBlog"></app-edit-blog>
+<app-delete-blog *ngIf="deleteSelectedBlog" [blog]="deleteSelectedBlog"></app-delete-blog>

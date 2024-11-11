@@ -1,0 +1,81 @@
+
+<div class="container d-flex justify-content-center" *ngIf="!wasSubmitted">
+  <div class="col-9 col-md-6">
+      <h1 class="mb-4 text-center">CREATE A BLOG</h1>
+
+      <!-- Use Angular's ngSubmit for form submission and ngModel for two-way binding -->
+      <form (ngSubmit)="onSubmit()" #createForm="ngForm" class="needs-validation" novalidate>
+
+        <!-- Input element for author name -->
+        <div class="mb-3">
+            <label for="authorName" class="form-label">Author</label>
+            <input type="text" id="authorName" class="form-control" aria-describedby="helpAuthorName" placeholder="Enter the name of the Author" required [(ngModel)]="blog.authorName" name="authorName">
+            <div class="invalid-feedback">Please provide a valid Author name.</div>
+        </div>
+
+        <!-- Input element for blog title -->
+          <div class="mb-3">
+            <label for="blog" class="form-label">Blog Title</label>
+            <input id="blog" type="text" class="form-control" aria-describedby="helpBlog" placeholder="Enter the name of the Blog" required [(ngModel)]="blog.title" name="title">
+              <div class="invalid-feedback">Please type your blog title.</div>
+          </div>
+        <!-- Input element for Description -->
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+          <textarea id="description" rows="5" class="form-control" aria-describedby="helpDescription" placeholder="Enter the description of the Blog" required [(ngModel)]="blog.description" name="description"></textarea>
+              <div class="invalid-feedback">Please check the Description.</div>
+          </div>
+        <!-- Input element for Year -->
+          <div class="mb-3">
+            <label for="year" class="form-label">Year</label>
+            <input id="year" type="text" class="form-control" aria-describedby="helpYear" placeholder="Enter the year of the Blog" required [(ngModel)]="blog.year" name="year">
+              <div class="invalid-feedback">Please enter valid year</div>
+          </div>
+        <!-- Input element for Image -->
+          <div class="mb-3">
+            <label for="image" class="form-label">Link to image</label>
+          <input id="image" type="text" class="form-control" aria-describedby="helpImage" placeholder="Enter the image filename for the Blog" [(ngModel)]="blog.image" name="image">
+              <div class="invalid-feedback">Please enter valid URL.</div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+
+      </form>
+  </div>
+</div>
+
+<div  *ngIf="wasSubmitted">
+  Album was added successfully.
+</div>
+
+<!--
+
+<div align="center" style="margin-left:50px;margin-right:50px" *ngIf="!wasSubmitted">
+  <p>{{ blog.authorName }}</p>
+  <form (ngSubmit)="onSubmit()" #createForm="ngForm">
+      <div class="mb-3">
+        <label for="authorName" class="form-label">Author:</label>
+            <input id="authorName" type="text"  class="form-control" aria-describedby="helpAuthorName" placeholder="Enter the name of the Author" required [(ngModel)]="blog.authorName" name="authorName">
+            <div class="invalid-feedback">Please provide a valid email address.</div>
+      </div>
+      <div class="form-group">
+
+        </div>
+      <div class="form-group">
+          <label for="description" class="form-label">Description</label>
+          <textarea id="description" rows="3" class="form-control" aria-describedby="helpDescription" placeholder="Enter the description of the Blog" required [(ngModel)]="blog.description" name="description"></textarea>
+       </div>
+      <div class="form-group">
+          <label for="year" class="form-label">Year</label>
+          <input id="year" type="text" class="form-control" aria-describedby="helpYear" placeholder="Enter the year of the Blog" required [(ngModel)]="blog.year" name="year">
+      </div>
+      <div class="form-group">
+          <label for="image" class="form-label">Link to the image</label>
+          <input id="image" type="text" class="form-control" aria-describedby="helpImage" placeholder="Enter the image filename for the Blog" [(ngModel)]="blog.image" name="image">
+      </div>
+
+    </form>
+
+  </div>
+  <div  *ngIf="wasSubmitted">
+    Album was added successfully.
+  </div> -->

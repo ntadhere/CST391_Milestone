@@ -1,0 +1,20 @@
+<div class="card">
+  <img src="{{ blog!.image }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h1 class="card-title">{{ blog!.title }}</h1>
+    <p class="card-text">{{ blog!.description }}</p>
+  </div>
+  <table>
+    <tr>
+      <td width="50px" align="center">
+        <a href="#" data-toggle="collapse" data-target="#collapseTracks" aria-expanded="false" aria-controls="collapseTracks"><i class="fa fa-list"></i></a>
+      </td>
+      <td width="50px" align="center">
+        <a [routerLink]="['/edit', blog!.blogId]"><i class="fa fa-edit"></i></a>
+      </td>
+      <td width="50px" align="center">
+        <a [routerLink]="['/delete', blog!.blogId]"><i class="fa fa-trash"></i></a>
+      </td>
+    </tr>
+  </table>
+</div>

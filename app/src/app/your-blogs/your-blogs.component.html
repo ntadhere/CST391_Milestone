@@ -1,0 +1,35 @@
+<div *ngIf="!selectedBlog">
+
+
+  <h1>{{ title }}</h1>
+  <div class="container d-flex justify-content-center">
+    <div class="card" style="width: 28rem; margin-right: 2rem">
+      <img [src]="author.image" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{author.name}}</h5>
+      <p class="card-text">author ID: {{author.authorId}}</p>
+      <p class="card-text">username: {{author.username}}</p>
+      <p class="card-text">email: {{author.email}}</p>
+      <p class="card-text">password: {{author.password}}</p>
+    </div>
+  </div>
+  <div class="row row-cols-1 row-cols-md-2 g-4" >
+    <div class="col" *ngFor="let blog of blogs" (click)="onSelectBlog(blog)" >
+      <div class="card mb-3">
+        <img [src]="blog.image" class="card-img-top" class="img-square" />
+        <div class="card-body">
+          <h5 class="card-title">{{ blog.title }}</h5>
+          <p class="card-text"> {{ blog.year }}
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="selectedBlog">
+  <app-display-blog [blog]="selectedBlog"></app-display-blog>
+</div>

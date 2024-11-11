@@ -1,0 +1,13 @@
+.img-square {
+  width: 100%;         /* Make the width take full space of the parent element */
+  height: 20rem;
+  object-fit: cover;    /* Ensures the image covers the square without distortion */
+  border-radius: 0;   /* Optional: Adds rounded corners */
+}
+h1 {
+  margin: 4rem 0;
+  text-align: center;
+}
+.card {
+  
+}
