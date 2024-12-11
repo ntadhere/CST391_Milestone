@@ -1,0 +1,29 @@
+.col-author img {
+  border-radius: 100%;
+  aspect-ratio: 1/1;
+}
+
+.col-author {
+  margin: 1rem;
+}
+
+.col-author h2,
+.col-author p {
+  text-align: center;
+  margin: 0.5rem;
+}
+
+.col-author .button-group {
+  justify-content: center !important;
+  flex-direction: column;
+}
+
+.col-author form {
+  padding-left: 2rem;
+  width: 50%;
+}
+
+.col-author span img {
+  width: 45rem !important;
+  aspect-ratio: 1/1;
+}
